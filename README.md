@@ -1,11 +1,11 @@
-# generator-dummy
+# generator-dummies
 
 A light Sass &amp; coffee front-end base in a generator for [Yeoman](http://yeoman.io).
 
 
 # Usage
 
-- npm install -g generator-dummy
+- npm install -g generator-dummies
 - yo dummy
 - run **grunt serve**
 - work
@@ -36,6 +36,7 @@ Go check the **[Dummy](https://github.com/in8/dummy)** to get a full list!
 
 # Release notes
 
+- **0.2.0** : renamed *generator-dummy* to *generator-dummies* to publish to npm index
 - **0.1.0** : *Dummy* is dead, long live *generator-dummy*
 
 # Road map

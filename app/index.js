@@ -4,7 +4,7 @@ var path = require('path');
 var yeoman = require('yeoman-generator');
 
 
-var DummyGenerator = module.exports = function DummyGenerator(args, options, config) {
+var DummiesGenerator = module.exports = function DummiesGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
 
   this.on('end', function () {
@@ -29,9 +29,9 @@ var DummyGenerator = module.exports = function DummyGenerator(args, options, con
   this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
 };
 
-util.inherits(DummyGenerator, yeoman.generators.Base);
+util.inherits(DummiesGenerator, yeoman.generators.Base);
 
-DummyGenerator.prototype.askFor = function askFor() {
+DummiesGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
 
   // have Yeoman greet the user.
@@ -73,7 +73,7 @@ DummyGenerator.prototype.askFor = function askFor() {
   }.bind(this));
 };
 
-DummyGenerator.prototype.app = function app() {
+DummiesGenerator.prototype.app = function app() {
   this.mkdir('css');
   this.mkdir('css/src');
 
@@ -130,7 +130,7 @@ DummyGenerator.prototype.app = function app() {
   this.template('_package.json', 'package.json');
 };
 
-DummyGenerator.prototype.projectfiles = function projectfiles() {
+DummiesGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('editorconfig', '.editorconfig');
   this.copy('jshintrc', '.jshintrc');
 };

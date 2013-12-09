@@ -6,7 +6,7 @@ A light Sass &amp; coffee front-end base in a generator for [Yeoman](http://yeom
 # Usage
 
 - npm install -g generator-dummies
-- yo dummy
+- yo dummies
 - run **grunt serve**
 - work
 

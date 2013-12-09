@@ -1,4 +1,5 @@
 {
+  "name": "dummy",
   "dependencies": {
     "modernizr": "latest",
     "jquery": "~1.9.0",

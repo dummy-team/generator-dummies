@@ -1,0 +1,26 @@
+// Fallback for no mediaquery support (gutter will no longer be the default one)
+$baseWidth  : 990px;
+
+// Max size of the page
+$max        : 1200;
+$maxWidth   : $max * 1px;
+
+// Margin and padding base unit
+$u          : 10px;
+
+// Gutter width for the grid system
+$gutter     : 30 / $max * 100%;
+
+// # Colors
+$white          : #FFFFFF;
+$grey           : #444;
+$black          : #333;
+
+$red            : #BC2422;
+$orange         : #D58F26;
+
+$outlineBlue    : #aad4ff;
+$errorRed       : #e04831;
+
+// # Fonts
+$font   : Arial, sans-serif;

@@ -1,0 +1,48 @@
+{
+  "name": "generator-dummy",
+  "description": "a generator for dummy",
+  "version": "0.1.0",
+  "author": {
+    "name": "Inouit",
+    "url": "www.inouit.fr"
+  },
+  "contributors": [
+    "Plou <cl.plou@gmail.com> (http://plou.github.io/)",
+    "Gregcop1 <gregcop1@gmail.com>",
+    "Toofff <prouyann@gmail.com> (http://yanoucrea.fr)",
+    "Shatimes <contact@shatimes.fr> (http://www.shatimes.fr)",
+    "JViste <jviste@inouit.com>"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/in8/generator-dummy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/in8/generator-dummy/issues"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "yeoman-generator": "~0.14.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.14.0"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.2.10"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
+}

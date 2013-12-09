@@ -119,13 +119,12 @@ DummiesGenerator.prototype.app = function app() {
   this.copy('_Gemfile', 'Gemfile');
 
   this.copy('.bowerrc', '.bowerrc');
-  this.copy('.editorconfig', '.editorconfig');
   this.copy('LICENSE', 'LICENSE');
   this.copy('../../README.md', 'README.md');
 
   this.copy('index.html', 'index.html');
 
-  this.template('.gitignore', '.gitignore');
+  this.template('_.gitignore', '_.gitignore');
   this.template('_gruntfile.coffee', 'gruntfile.coffee');
   this.template('_package.json', 'package.json');
 };

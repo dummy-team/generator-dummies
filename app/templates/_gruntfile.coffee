@@ -76,8 +76,9 @@ module.exports = (grunt) ->
         files:[
           '*.html'
           '**/*.html'
-          'notify:html'
         ]
+        tasks:
+          'notify:html'
       sass:
         files:'css/src/*.scss'
         tasks: [

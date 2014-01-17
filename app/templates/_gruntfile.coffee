@@ -11,12 +11,21 @@ module.exports = (grunt) ->
     # You can't run the docco task alone, coffeFiles & sassFiles don't chain.
     # You have to call them separatly.
     docco:
+<% if (CoffeeScript) { %>
       coffeeFiles:
         files:
           src: ['js/src/*.coffee']
         options:
           output: 'docs/coffee/annotated-source'
           css: 'docs/assets/custom.css'
+<% } else { %>
+      jsFiles:
+        files:
+          src: ['js/*.js']
+        options:
+          output: 'docs/js/annotated-source'
+          css: 'docs/assets/custom.css'
+<% } %>
       sassFiles:
         files:
           src: ['css/src/*.scss']
@@ -71,21 +80,20 @@ module.exports = (grunt) ->
 
     watch:
       options:
-        port: grunt.option('liveport') || 35729
+        livereload: grunt.option('liveport') || 35729
+
       html:
         files:[
           '*.html'
           '**/*.html'
         ]
-        tasks:
-          'notify:html'
+
       sass:
         files:'css/src/*.scss'
         tasks: [
           'sass:build',
           'autoprefixer:build'
           'docco:sassFiles'
-          'notify:sass'
         ]
 <% if (environment == "typo3") { %>
       typoscript:
@@ -93,43 +101,32 @@ module.exports = (grunt) ->
           '../typoscript/**/*.ts'
           '../ext_*.txt'
         ]
+<% } %>
       images:
         files:[
           'img/**/*'
           'img/*'
         ]
-<% } %>
 <% if (CoffeeScript) { %>
       coffee:
         files: 'js/src/*.coffee'
         tasks: [
           'coffee:build'
           'docco:coffeeFiles'
-          'notify:coffee'
+        ]
+<% } else { %>
+      js:
+        files: 'js/*.js'
+        tasks: [
+          'docco:jsFiles'
         ]
 <% } %>
-
-    notify:
-      html:
-        options:
-          title: 'Live reload',
-          message: 'html updated',
-      sass:
-        options:
-          title: 'Live reload',
-          message: 'Sass compiled & documentation generated',
 <% if (CoffeeScript) { %>
       coffee:
         options:
           title: 'Live reload',
           message: 'CoffeeScript compiled & documentation generated',
 <% } %>
-      server:
-        options:
-          message: 'Server is ready!'
-      build:
-        options:
-          message: 'Build Successfull!'
 
     grunt.registerTask 'default', 'serve'
 
@@ -143,7 +140,6 @@ module.exports = (grunt) ->
       'connect'
       'open'
 <% } %>
-      'notify:server'
       'watch'
     ]
     grunt.registerTask 'build', [
@@ -152,6 +148,5 @@ module.exports = (grunt) ->
 <% if (CoffeeScript) { %>
       'coffee:build'
 <% } %>
-      'notify:build'
     ]
 

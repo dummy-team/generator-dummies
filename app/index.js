@@ -22,6 +22,9 @@ var DummiesGenerator = module.exports = function DummiesGenerator(args, options,
         if (this.CoffeeScript) {
           this.spawnCommand('grunt', ['docco:coffeeFiles']);
         }
+        else {
+          this.spawnCommand('grunt', ['docco:jsFiles']);
+        }
       }.bind(this)
     });
   });

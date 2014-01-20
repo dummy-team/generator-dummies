@@ -14,17 +14,26 @@
     "JViste <jviste@inouit.com>"
   ],
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/in8/dummy.git"
+    "type": "git",
+    "url": "https://github.com/in8/dummy.git"
   },
-  "bugs" : {
-    "url" : "https://github.com/in8/dummy/issues"
+  "bugs": {
+    "url": "https://github.com/in8/dummy/issues"
   },
   "dependencies": {
     "modernizr": "latest",
     "jquery": "~1.9.0",
     "jquery.scrollTo": "latest",
     "jscrollpane": "~2.0.0"
-  }
+  },
+  "homepage": "https://github.com/in8/dummy",
+  "_release": "0.10.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.10.1",
+    "commit": "8ee545e54a2df026ddb56007bcf39b5bd33c9432"
+  },
+  "_source": "git://github.com/in8/dummy.git",
+  "_target": "~0.10.1",
+  "_originalSource": "dummy"
 }
-

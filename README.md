@@ -36,6 +36,9 @@ Go check the **[Dummy](https://github.com/in8/dummy)** to get a full list!
 
 # Release notes
 
+- **1.0.1** :
+    - Upgraded to dummy 0.10.1
+    - Fixed a compatibility issue
 - **1.0.0** :
     - Dummy is now managed as a bower dependency
     - bug fixes

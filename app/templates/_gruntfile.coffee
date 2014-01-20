@@ -32,6 +32,7 @@ module.exports = (grunt) ->
         options:
           output: 'docs/sass/annotated-source'
           css: 'docs/assets/custom.css'
+
 <% if (CoffeeScript) { %>
     coffee:
       build:
@@ -120,12 +121,6 @@ module.exports = (grunt) ->
         tasks: [
           'docco:jsFiles'
         ]
-<% } %>
-<% if (CoffeeScript) { %>
-      coffee:
-        options:
-          title: 'Live reload',
-          message: 'CoffeeScript compiled & documentation generated',
 <% } %>
 
     grunt.registerTask 'default', 'serve'

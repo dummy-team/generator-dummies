@@ -1,7 +1,7 @@
 # generator-dummies
 
 A light Sass &amp; coffee front-end base in a generator for [Yeoman](http://yeoman.io).
-
+It scaffold a **[Dummy](https://github.com/in8/dummy)** **[0.10.0](https://github.com/in8/dummy/tree/0.10.0)**
 
 # Usage
 
@@ -36,12 +36,13 @@ Go check the **[Dummy](https://github.com/in8/dummy)** to get a full list!
 
 # Release notes
 
+- **1.0.0** :
+    - Dummy is now managed as a bower dependency
+    - bug fixes
 - **0.2.0** : renamed *generator-dummy* to *generator-dummies* to publish to npm index
 - **0.1.0** : *Dummy* is dead, long live *generator-dummy*
 
 # Road map
-
-- **1.0.0**: Remove static dummy files and get them by bower
 
 - split grunt tasks into files
 - solve discussions questions and implement them
@@ -54,7 +55,7 @@ Go check the **[Dummy](https://github.com/in8/dummy)** to get a full list!
 - Browserify / CommonJS
 - Add tasks to export sources, and push to prod
 - Add grunt configuration for symfony2
-- Full compatibility (livereloading) with *skinFlex* for *Typo3* (dummy or typo3 issue ?)
+- Full compatibility (livereloading) with *skinFlex* for *Typo3* (clean the cache entry in database)
 
 # Dependencies
 

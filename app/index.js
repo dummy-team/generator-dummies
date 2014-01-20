@@ -80,52 +80,51 @@ DummiesGenerator.prototype.app = function app() {
   this.mkdir('css');
   this.mkdir('css/src');
 
-  this.copy('css/rte.css', 'css/rte.css');
-  this.copy('css/src/columns.scss', 'css/src/columns.scss');
-  this.copy('css/src/config.scss', 'css/src/config.scss');
-  this.copy('css/src/functions.scss', 'css/src/functions.scss');
-  this.copy('css/src/ie.scss', 'css/src/ie.scss');
-  this.copy('css/src/main.scss', 'css/src/main.scss');
-  this.copy('css/src/mediaqueries.scss', 'css/src/mediaqueries.scss');
-  this.copy('css/src/mixins.scss', 'css/src/mixins.scss');
-  this.copy('css/src/reset.scss', 'css/src/reset.scss');
-  this.copy('css/src/styles.scss', 'css/src/styles.scss');
+  this.copy('bower_components/dummy/css/rte.css', 'css/rte.css');
+  this.copy('bower_components/dummy/css/src/columns.scss', 'css/src/columns.scss');
+  this.copy('bower_components/dummy/css/src/config.scss', 'css/src/config.scss');
+  this.copy('bower_components/dummy/css/src/functions.scss', 'css/src/functions.scss');
+  this.copy('bower_components/dummy/css/src/ie.scss', 'css/src/ie.scss');
+  this.copy('bower_components/dummy/css/src/main.scss', 'css/src/main.scss');
+  this.copy('bower_components/dummy/css/src/mediaqueries.scss', 'css/src/mediaqueries.scss');
+  this.copy('bower_components/dummy/css/src/mixins.scss', 'css/src/mixins.scss');
+  this.copy('bower_components/dummy/css/src/reset.scss', 'css/src/reset.scss');
+  this.copy('bower_components/dummy/css/src/styles.scss', 'css/src/styles.scss');
 
   if (this.environment == "typo3") {
-    this.copy('css/src/powermail.scss', 'css/src/powermail.scss');
+    this.copy('bower_components/dummy/css/src/powermail.scss', 'css/src/powermail.scss');
   }
-
   this.mkdir('js');
   this.mkdir('js/components');
   this.mkdir('js/htc');
 
-  this.copy('js/htc/backgroundsize.min.htc', 'js/htc/backgroundsize.min.htc');
+  this.copy('bower_components/dummy/js/htc/backgroundsize.min.htc', 'js/htc/backgroundsize.min.htc');
 
   if (this.CoffeeScript) {
     this.mkdir('js/src');
-    this.copy('js/src/base.coffee', 'js/src/base.coffee');
-    this.copy('js/src/main.coffee', 'js/src/main.coffee');
+    this.copy('bower_components/dummy/js/src/base.coffee', 'js/src/base.coffee');
+    this.copy('bower_components/dummy/js/src/main.coffee', 'js/src/main.coffee');
   }
   else {
-    this.copy('js/base.js', 'js/base.js');
-    this.copy('js/main.js', 'js/main.js');
+    this.copy('bower_components/dummy/js/base.js', 'js/base.js');
+    this.copy('bower_components/dummy/js/main.js', 'js/main.js');
   }
 
   this.mkdir('demo');
-  this.copy('demo/index.html', 'demo/index.html');
+  this.copy('bower_components/dummy/demo/index.html', 'demo/index.html');
 
   this.mkdir('docs');
   this.mkdir('docs/assets');
-  this.copy('docs/assets/custom.css', 'docs/assets/custom.css');
+  this.copy('bower_components/dummy/docs/assets/custom.css', 'docs/assets/custom.css');
 
   this.copy('_bower.json', 'bower.json');
   this.copy('_Gemfile', 'Gemfile');
 
-  this.copy('.bowerrc', '.bowerrc');
-  this.copy('LICENSE', 'LICENSE');
-  this.copy('../../README.md', 'README.md');
+  this.copy('bower_components/dummy/.bowerrc', '.bowerrc');
+  this.copy('bower_components/dummy/LICENSE', 'LICENSE');
+  this.copy('bower_components/dummy/README.md', 'README.md');
 
-  this.copy('index.html', 'index.html');
+  this.copy('bower_components/dummy/index.html', 'index.html');
 
   this.template('_.gitignore', '_.gitignore');
   this.template('_gruntfile.coffee', 'gruntfile.coffee');
@@ -133,6 +132,19 @@ DummiesGenerator.prototype.app = function app() {
 };
 
 DummiesGenerator.prototype.projectfiles = function projectfiles() {
-  this.copy('editorconfig', '.editorconfig');
-  this.copy('jshintrc', '.jshintrc');
+  this.copy('bower_components/dummy/.editorconfig', '.editorconfig');
+};
+
+DummiesGenerator.prototype.rewriteFiles = function rewriteFiles() {
+  if (this.environment != "typo3") {
+    var styles = this.readFileAsString('css/src/styles.scss');
+    styles = styles.replace("\n@import 'powermail';", "");
+
+    var ie = this.readFileAsString('css/src/ie.scss');
+    ie = ie.replace("\n@import 'powermail';", "");
+
+    console.log("Powermail include isn't needed for this environment")
+    this.write('css/src/styles.scss',styles);
+    this.write('css/src/ie.scss',ie);
+  }
 };

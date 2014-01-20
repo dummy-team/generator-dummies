@@ -1,0 +1,36 @@
+{
+  "name": "generator-dummies",
+  "description": "a dummy generator - light Sass & coffee front-end base",
+  "version": "1.0.0",
+  "author": {
+    "name": "Inouit",
+    "url": "www.inouit.fr"
+  },
+  "contributors": [
+    "Plou <cl.plou@gmail.com> (http://plou.github.io/)",
+    "Gregcop1 <gregcop1@gmail.com>",
+    "Toofff <prouyann@gmail.com> (http://yanoucrea.fr)",
+    "Shatimes <contact@shatimes.fr> (http://www.shatimes.fr)",
+    "JViste <jviste@inouit.com>"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "front-end",
+    "grid",
+    "coffeescript",
+    "sass",
+    "inouit"
+  ],
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/in8/generator-dummies.git"
+  },
+  "bugs": {
+    "url": "https://github.com/in8/generator-dummies/issues"
+  },
+  "dependencies": {
+    "dummy": "~0.10.0"
+  }
+}
+

@@ -1,7 +1,7 @@
 # generator-dummies
 
 A light Sass &amp; coffee front-end base in a generator for [Yeoman](http://yeoman.io).
-It scaffold a **[Dummy](https://github.com/Inouit/dummy)** **[0.10.0](https://github.com/Inouit/dummy/tree/0.10.0)**
+It scaffold a **[Dummy](https://github.com/Inouit/dummy)** **[0.11.0](https://github.com/Inouit/dummy/tree/0.11.0)**
 
 # Usage
 

@@ -6,7 +6,7 @@ A light Sass &amp; coffee front-end base
 
 # Usage
 
-Go check the Yeoman's [generator](https://github.com/in8/generator-dummy) !
+Go check the Yeoman's [generator](https://github.com/Inouit/generator-dummy) !
 
 # Features
 
@@ -20,21 +20,9 @@ Go check the Yeoman's [generator](https://github.com/in8/generator-dummy) !
 - Some jQuery plugins helpers ready to use
 
 
-# To discuss
-
-## CSS
-
-- mediaqueries in a separate file / inline in the main sheet
-- usage of size unit ($u) : function(value) / value*$u
-- gutter multiple of $u
-
-## HTML
-
-- Use of templates over a demo ?
-
-
 # Release notes
 
+- **0.11.0** : Transfered repository ownership to Inouit organisation
 - **0.10.1** :
     - Added grunt configuration to enable stand alone use
     - Removed compiled javascript files from gitignore to keep compatibility with generator-dummies

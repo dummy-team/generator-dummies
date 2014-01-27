@@ -1,7 +1,7 @@
 {
   "name": "generator-dummies",
   "description": "a dummy generator - light Sass & coffee front-end base",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "author": {
     "name": "Inouit",
     "url": "www.inouit.fr"
@@ -24,10 +24,10 @@
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/in8/generator-dummies.git"
+    "url": "https://github.com/Inouit/generator-dummies.git"
   },
   "bugs": {
-    "url": "https://github.com/in8/generator-dummies/issues"
+    "url": "https://github.com/Inouit/generator-dummies/issues"
   },
   "scripts": {
     "test": "mocha"

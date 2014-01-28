@@ -1,7 +1,7 @@
 {
   "name": "generator-dummies",
   "description": "a dummy generator - light Sass & coffee front-end base",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "author": {
     "name": "Inouit",
     "url": "www.inouit.fr"

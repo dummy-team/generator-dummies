@@ -1,6 +1,6 @@
 {
   "name": "jquery.scrollTo",
-  "version": "1.4.9",
+  "version": "1.4.11",
   "description": "Easy element scrolling using jQuery.",
   "homepage": "https://github.com/flesler/jquery.scrollTo",
   "main": [
@@ -23,11 +23,11 @@
     "name": "Ariel Flesler",
     "web": "http://flesler.blogspot.com/"
   },
-  "_release": "1.4.9",
+  "_release": "1.4.11",
   "_resolution": {
     "type": "version",
-    "tag": "1.4.9",
-    "commit": "876bb165b19a1baa12d28663402a81e8b695324e"
+    "tag": "1.4.11",
+    "commit": "05035fc5cc591ecdb08c914ec8f231b99af55800"
   },
   "_source": "git://github.com/flesler/jquery.scrollTo.git",
   "_target": "*",

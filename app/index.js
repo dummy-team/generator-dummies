@@ -88,6 +88,7 @@ DummiesGenerator.prototype.app = function app() {
   this.copy('bower_components/dummy/css/src/main.scss', 'css/src/main.scss');
   this.copy('bower_components/dummy/css/src/mediaqueries.scss', 'css/src/mediaqueries.scss');
   this.copy('bower_components/dummy/css/src/mixins.scss', 'css/src/mixins.scss');
+  this.copy('bower_components/dummy/css/src/print.scss', 'css/src/print.scss');
   this.copy('bower_components/dummy/css/src/reset.scss', 'css/src/reset.scss');
   this.copy('bower_components/dummy/css/src/styles.scss', 'css/src/styles.scss');
 

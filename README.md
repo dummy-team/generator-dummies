@@ -36,6 +36,7 @@ Go check the **[Dummy](https://github.com/Inouit/dummy)** to get a full list!
 
 # Release notes
 
+- **1.1.3** : Upgraded to dummy 1.0.0
 - **1.1.2** : Upgraded to dummy 0.11.1
 - **1.1.0** :
     - Transfered repository ownership to Inouit organisation

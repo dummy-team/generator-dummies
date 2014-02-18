@@ -66,13 +66,9 @@ module.exports = (grunt) ->
     connect:
       all:
         options:
+          hostname: "0.0.0.0"
           port: grunt.option('port') || 0
-          hostname: "0.0.0.0",
-          middleware: (connect, options) ->
-            return [
-              # Serve the project folder
-              connect.static(options.base)
-            ]
+          livereload: grunt.option('liveport') || 35729
 
     open:
       all:

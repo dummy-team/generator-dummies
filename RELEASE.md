@@ -3,8 +3,8 @@
 ## 1.0
 
 - **1.2.0** :
-  - Livereload is working again
-  - Open hostname is now using the connect parameter
+  - Livereload is working again (https://github.com/Inouit/generator-dummies/issues/10)
+  - Open hostname is now using the connect parameter (https://github.com/Inouit/generator-dummies/issues/8)
   - Server Hostname can now be overrided by the `--host` option
   - Removed unused parameters in `bower.json`
   - Switch task loading to load-grunt-task

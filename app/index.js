@@ -53,16 +53,16 @@ DummiesGenerator.prototype.askFor = function askFor() {
       message: 'Where are your putting it?',
       choices: [
         {
+          name: 'Scratch',
+          value: 'scratch'
+        },
+        {
           name: 'TYPO3',
           value: 'typo3'
         },
         {
           name: 'Symfony2',
           value: 'symfony2'
-        },
-        {
-          name: 'Scratch',
-          value: 'scratch'
         }
       ]
     }

@@ -4,14 +4,13 @@ mountFolder = (connect, dir) ->
     connect.static require('path').resolve(dir)
 
 module.exports = (grunt) ->
-  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks)
+  require('load-grunt-tasks')(grunt)
 
   grunt.initConfig
 
     # You can't run the docco task alone, coffeFiles & sassFiles don't chain.
     # You have to call them separatly.
-    docco:
-<% if (CoffeeScript) { %>
+    docco:<% if (CoffeeScript) { %>
       coffeeFiles:
         files:
           src: ['js/src/*.coffee']
@@ -32,7 +31,6 @@ module.exports = (grunt) ->
         options:
           output: 'docs/sass/annotated-source'
           css: 'docs/assets/custom.css'
-
 <% if (CoffeeScript) { %>
     coffee:
       build:
@@ -45,7 +43,6 @@ module.exports = (grunt) ->
         dest: 'js'
         ext: '.js'
 <% } %>
-
     sass:
       build:
         options:
@@ -61,23 +58,22 @@ module.exports = (grunt) ->
       build:
         browsers: ["last 3 version", "ie 8", "ie 7"]
         src: 'css/main.css'
-
 <% if (environment == "scratch") { %>
     connect:
       all:
         options:
-          hostname: "0.0.0.0"
+          hostname: grunt.option('host') || "0.0.0.0"
           port: grunt.option('port') || 0
           livereload: grunt.option('liveport') || 35729
 
     open:
       all:
-        path: 'http://localhost:<%%= connect.all.options.port%>/'
+        path: 'http://<%%= connect.all.options.hostname%>:<%%= connect.all.options.port%>/'
 <% } %>
-
     watch:
       options:
-        livereload: grunt.option('liveport') || 35729
+        livereload:
+          port: '<%%= connect.all.options.livereload%>'
 
       html:
         files:[

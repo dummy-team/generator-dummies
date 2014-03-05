@@ -13,6 +13,6 @@
 <% } %>
     "grunt-notify": "~0.2.16",
     "grunt-contrib-watch": "*",
-    "matchdep": "*"
+    "load-grunt-tasks": "*"
   }
 }

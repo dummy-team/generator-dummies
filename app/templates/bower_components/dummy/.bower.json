@@ -1,7 +1,7 @@
 {
   "name": "dummy",
   "description": "A light Sass & coffee base front-end",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Inouit",
     "url": "www.inouit.fr"
@@ -27,11 +27,11 @@
     "jscrollpane": "~2.0.0"
   },
   "homepage": "https://github.com/in8/dummy",
-  "_release": "1.0.0",
+  "_release": "1.0.1",
   "_resolution": {
     "type": "version",
-    "tag": "1.0.0",
-    "commit": "dbe07506f4452a544502df4af5fd0556e27eddb5"
+    "tag": "1.0.1",
+    "commit": "dee68d62e218d5b6a1c4e1f444edb8685dcba60f"
   },
   "_source": "git://github.com/in8/dummy.git",
   "_target": ">=1.0.0",

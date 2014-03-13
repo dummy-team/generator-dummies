@@ -2,6 +2,7 @@
 
 ## 1.0
 
+- **1.2.1** : Upgraded to dummy 1.1.0
 - **1.2.0** :
   - Livereload is working again (https://github.com/Inouit/generator-dummies/issues/10)
   - Open hostname is now using the connect parameter (https://github.com/Inouit/generator-dummies/issues/8)

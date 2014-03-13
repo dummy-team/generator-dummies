@@ -1,7 +1,7 @@
 {
   "name": "generator-dummies",
   "dependencies": {
-    "dummy": ">=1.0.0"
+    "dummy": "1.1.0"
   }
 }
 

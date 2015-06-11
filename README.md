@@ -1,3 +1,6 @@
+# Deprecation notice
+This project has been deprecated. Go check our [dummy](https://github.com/Inouit/dummy)!
+
 # generator-dummies
 
 A light Sass &amp; coffee front-end base in a generator for [Yeoman](http://yeoman.io).

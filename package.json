@@ -1,6 +1,6 @@
 {
   "name": "generator-dummies",
-  "description": "A dummy generator - light Sass, coffee & automation front-end base",
+  "description": "A dummy generator - Solid foundations for Sass, javascript & automation front-end development",
   "version": "2.0.0-beta",
   "homepage": "https://github.com/dummy-team/generator-dummies",
   "author": {
@@ -15,14 +15,18 @@
   ],
   "main": "generators/index.js",
   "keywords": [
-    "yeoman-generator",
+    "dummy",
     "front-end",
-    "coffeescript",
     "sass",
-    "grunt",
-    "browserify",
+    "javascript",
     "automation",
-    "dummy"
+    "ES2015",
+    "browserify",
+    "babeljs",
+    "jshint",
+    "scss-lint",
+    "grunt",
+    "yeoman-generator"
   ],
   "main": "app/index.js",
   "repository": {
@@ -35,7 +39,7 @@
   "dependencies": {
     "yeoman-generator": "^0.21.1",
     "chalk": "^1.0.0",
-    "yosay": "^1.0.2"
+    "dummysay": "^1.0.0"
   },
   "devDependencies": {
     "yeoman-assert": "^2.0.0",
@@ -49,7 +53,6 @@
   },
   "repository": "dummy-team/generator-dummies",
   "scripts": {
-    "prepublish": "gulp prepublish",
     "test": "gulp"
   },
   "license": "MIT"

@@ -2,9 +2,9 @@
 
 ## 2.0
 
-- **2.0.0** :
+- **2.0.0-beta** :
    - Dummy 6 compatibility
-
+   - Complete rewrite
 
 ## 1.0
 

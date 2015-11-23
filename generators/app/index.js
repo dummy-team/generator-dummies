@@ -1,22 +1,23 @@
 'use strict';
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
-var yosay = require('yosay');
+var dummysay = require('dummysay');
 
 module.exports = yeoman.generators.Base.extend({
   prompting: function () {
     var done = this.async();
 
-    // Have Yeoman greet the user.
-    this.log(yosay(
-      'Welcome to the sensational ' + chalk.red('generator-tmp') + ' generator!'
-    ));
+    Have Yeoman greet the user.
+   this.log(dummysay(
+     'Welcome to the ' + chalk.blue('dummy') + ' factory!'
+   ));
 
     var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
+      type: 'list',
+      name: 'branch',
+      message: 'Would you like to install the beta version?',
+      choices: ['master', 'beta'],
+      default: 'master'
     }];
 
     this.prompt(prompts, function (props) {
@@ -28,13 +29,23 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   writing: function () {
-    this.fs.copy(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
-    );
+    this.copy('readme.md', 'readme.md');
+
+    this.remote('dummy-team', 'dummy', this.props.branch, function (err, remote) {
+      remote.bulkCopy('index.html', 'index.html');
+      remote.bulkCopy('.gitignore', '.gitignore');
+      remote.bulkCopy('.editorconfig', '.editorconfig');
+      remote.bulkDirectory('grunt', './grunt');
+      remote.bulkDirectory('css', './css');
+      remote.bulkDirectory('js', './js');
+      remote.bulkDirectory('img', './img');
+    });
   },
 
   install: function () {
-    this.installDependencies();
+    if (!this.options['skip-install']) {
+      this.spawnCommandSync('npm', ['install'], { cwd: 'grunt'});
+      this.spawnCommandSync('grunt', ['build'], { cwd: 'grunt'});
+    }
   }
 });

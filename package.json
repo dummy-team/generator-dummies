@@ -1,53 +1,56 @@
 {
   "name": "generator-dummies",
-  "description": "a dummy generator - light Sass & coffee front-end base",
-  "version": "1.2.1",
+  "description": "A dummy generator - light Sass, coffee & automation front-end base",
+  "version": "2.0.0-beta",
+  "homepage": "https://github.com/dummy-team/generator-dummies",
   "author": {
-    "name": "Inouit",
-    "url": "www.inouit.fr"
+    "name": "Dummy-team",
+    "url": "https://github.com/dummy-team"
   },
   "contributors": [
-    "Plou <cl.plou@gmail.com> (http://plou.github.io/)",
-    "Gregcop1 <gregcop1@gmail.com>",
-    "Toofff <prouyann@gmail.com> (http://yanoucrea.fr)",
-    "Shatimes <contact@shatimes.fr> (http://www.shatimes.fr)",
-    "JViste <jviste@inouit.com>"
+    "Plou <cl.plou@gmail.com>"
   ],
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
   "keywords": [
     "yeoman-generator",
     "front-end",
-    "grid",
     "coffeescript",
     "sass",
-    "inouit"
+    "grunt",
+    "browserify",
+    "automation",
+    "dummy"
   ],
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Inouit/generator-dummies.git"
+    "url": "https://github.com/dummy-team/generator-dummies.git"
   },
   "bugs": {
-    "url": "https://github.com/Inouit/generator-dummies/issues"
-  },
-  "scripts": {
-    "test": "mocha"
+    "url": "https://github.com/dummy-team/generator-dummies/issues"
   },
   "dependencies": {
-    "yeoman-generator": "~0.14.0"
+    "yeoman-generator": "^0.21.1",
+    "chalk": "^1.0.0",
+    "yosay": "^1.0.2"
   },
   "devDependencies": {
-    "mocha": "~1.14.0"
+    "yeoman-assert": "^2.0.0",
+    "gulp": "^3.6.0",
+    "gulp-eslint": "^1.0.0",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-istanbul": "^0.9.0",
+    "gulp-mocha": "^2.0.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-nsp": "^2.1.0"
   },
-  "peerDependencies": {
-    "yo": ">=1.0.0"
+  "repository": "dummy-team/generator-dummies",
+  "scripts": {
+    "prepublish": "gulp prepublish",
+    "test": "gulp"
   },
-  "engines": {
-    "node": ">=0.8.0",
-    "npm": ">=1.2.10"
-  },
-  "licenses": [
-    {
-      "type": "MIT"
-    }
-  ]
+  "license": "MIT"
 }

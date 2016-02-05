@@ -7,10 +7,10 @@ module.exports = yeoman.generators.Base.extend({
   prompting: function () {
     var done = this.async();
 
-    Have Yeoman greet the user.
-   this.log(dummysay(
-     'Welcome to the ' + chalk.blue('dummy') + ' factory!'
-   ));
+    // Have the dummy greet the user.
+    this.log(dummysay(
+      'Welcome to the ' + chalk.blue('dummy') + ' factory!'
+    ));
 
     var prompts = [{
       type: 'list',

@@ -1,7 +1,7 @@
 {
   "name": "generator-dummies",
   "description": "A dummy generator - Solid foundations for Sass, javascript & automation front-end development",
-  "version": "2.0.0-beta3",
+  "version": "2.0.0-beta4",
   "homepage": "https://github.com/dummy-team/generator-dummies",
   "author": {
     "name": "Dummy-team",

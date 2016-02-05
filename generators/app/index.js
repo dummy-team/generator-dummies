@@ -30,15 +30,15 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: function () {
     this.copy('readme.md', 'readme.md');
-
+    var self = this;
     this.remote('dummy-team', 'dummy', this.props.branch, function (err, remote) {
-      remote.bulkCopy('index.html', 'index.html');
-      remote.bulkCopy('.gitignore', '.gitignore');
-      remote.bulkCopy('.editorconfig', '.editorconfig');
-      remote.bulkDirectory('grunt', './grunt');
-      remote.bulkDirectory('css', './css');
-      remote.bulkDirectory('js', './js');
-      remote.bulkDirectory('img', './img');
+      self.fs.copy(remote.cachePath + '/index.html', 'index.html');
+      self.fs.copy(remote.cachePath + '/.gitignore', '.gitignore');
+      self.fs.copy(remote.cachePath + '/.editorconfig', '.editorconfig');
+      self.fs.copy(remote.cachePath + '/grunt', './grunt');
+      self.fs.copy(remote.cachePath + '/css', './css');
+      self.fs.copy(remote.cachePath + '/js', './js');
+      self.fs.copy(remote.cachePath + '/img', './img');
     });
   },
 

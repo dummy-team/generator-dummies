@@ -2,7 +2,11 @@
 
 ## 2.0
 
-- **2.0.0-beta** :
+- **2.1.0** :
+  - Allow to import components from dummy-toolkit
+  - Import Bootstrap Grid & Cookie Box
+
+- **2.0.0** :
    - Dummy 6 compatibility
    - Complete rewrite
 

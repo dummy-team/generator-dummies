@@ -1,7 +1,7 @@
 {
   "name": "generator-dummies",
   "description": "A dummy generator - Solid foundations for Sass, javascript & automation front-end development",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "homepage": "https://github.com/dummy-team/generator-dummies",
   "author": {
     "name": "Dummy-team",
@@ -11,9 +11,10 @@
     "Plou <cl.plou@gmail.com>"
   ],
   "files": [
-    "generators"
+    "generators/app",
+    "generators/toolkit"
   ],
-  "main": "generators/index.js",
+  "main": "app/index.js",
   "keywords": [
     "dummy",
     "front-end",
@@ -28,18 +29,16 @@
     "grunt",
     "yeoman-generator"
   ],
-  "main": "app/index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dummy-team/generator-dummies.git"
-  },
+  "repository": "dummy-team/generator-dummies",
   "bugs": {
     "url": "https://github.com/dummy-team/generator-dummies/issues"
   },
   "dependencies": {
-    "yeoman-generator": "^0.21.1",
     "chalk": "^1.0.0",
-    "dummysay": "^1.0.0"
+    "dummysay": "^1.0.0",
+    "marked": "^0.3.5",
+    "marked-terminal": "^1.6.1",
+    "yeoman-generator": "^0.21.1"
   },
   "devDependencies": {
     "yeoman-assert": "^2.0.0",
@@ -51,7 +50,6 @@
     "gulp-plumber": "^1.0.0",
     "gulp-nsp": "^2.1.0"
   },
-  "repository": "dummy-team/generator-dummies",
   "scripts": {
     "test": "gulp"
   },

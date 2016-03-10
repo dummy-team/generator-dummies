@@ -7,7 +7,7 @@ var TerminalRenderer = require('marked-terminal')
 marked.setOptions({renderer: new TerminalRenderer()})
 
 var instructions = '\n\n\n'
-var branch = 'structure'
+var branch = 'master'
 
 module.exports = yeoman.generators.Base.extend({
   prompting: function () {

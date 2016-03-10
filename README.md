@@ -12,3 +12,10 @@ yo dummies
 # Features
 
 Go check the **[Dummy](http://dummy-team.github.io/dummy/)** to get a full list!
+
+# Components
+
+You can install components from **[Dummy ToolKit](http://github.com/dummy-team/dummy-toolkit/)**
+```
+yo dummies:toolkit
+```

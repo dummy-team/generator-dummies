@@ -2,8 +2,11 @@
 
 ## 2.0
 
+- **2.2.1** :
+  - Fix dummy fetching
+
 - **2.2.0** :
-  - Add `--slient` option to skip prompt and install with defaults
+  - Add `--silent` option to skip prompt and install with defaults
 
 - **2.1.0** :
   - Allow to import components from dummy-toolkit

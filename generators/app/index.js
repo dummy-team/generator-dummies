@@ -20,36 +20,33 @@ module.exports = yeoman.generators.Base.extend({
       default: 'master'
     }];
 
-    if (this.options['silent']) {
-      this.props = {branch: 'master'}
-      done()
-    }
-
     this.prompt(prompts, function (props) {
-      this.props = props
+      this.props = props;
 
-      done()
-    }.bind(this))
+      done();
+    }.bind(this));
   },
 
   writing: function () {
-    this.copy('readme.md', 'readme.md')
-    var self = this
+    this.copy('readme.md', 'readme.md');
+    var self = this;
+    var done = this.async()
     this.remote('dummy-team', 'dummy', this.props.branch, function (err, remote) {
-      self.fs.copy(remote.cachePath + '/index.html', 'index.html')
-      self.fs.copy(remote.cachePath + '/.gitignore', '.gitignore')
-      self.fs.copy(remote.cachePath + '/.editorconfig', '.editorconfig')
-      self.fs.copy(remote.cachePath + '/grunt', './grunt')
-      self.fs.copy(remote.cachePath + '/css', './css')
-      self.fs.copy(remote.cachePath + '/js', './js')
-      self.fs.copy(remote.cachePath + '/img', './img')
-    })
+      self.fs.copy(remote.cachePath + '/index.html', 'index.html');
+      self.fs.copy(remote.cachePath + '/.gitignore', '.gitignore');
+      self.fs.copy(remote.cachePath + '/.editorconfig', '.editorconfig');
+      self.fs.copy(remote.cachePath + '/grunt', './grunt');
+      self.fs.copy(remote.cachePath + '/css', './css');
+      self.fs.copy(remote.cachePath + '/js', './js');
+      self.fs.copy(remote.cachePath + '/img', './img');
+      done();
+    }, true);
   },
 
   install: function () {
     if (!this.options['skip-install']) {
-      this.spawnCommandSync('npm', ['install'], { cwd: 'grunt'})
-      this.spawnCommandSync('grunt', ['build'], { cwd: 'grunt'})
+      this.spawnCommandSync('npm', ['install'], { cwd: 'grunt'});
+      this.spawnCommandSync('grunt', ['build'], { cwd: 'grunt'});
     }
   }
-})
+});

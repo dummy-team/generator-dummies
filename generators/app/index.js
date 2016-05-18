@@ -12,19 +12,24 @@ module.exports = yeoman.generators.Base.extend({
       'Welcome to the ' + chalk.blue('dummy') + ' factory!'
     ));
 
-    var prompts = [{
-      type: 'list',
-      name: 'branch',
-      message: 'Would you like to install the beta version?',
-      choices: ['master', 'beta'],
-      default: 'master'
-    }];
+    if (this.options['silent']) {
+      this.props = {branch: 'master'}
+      done()
+    }
+    else {
+      var prompts = [{
+        type: 'list',
+        name: 'branch',
+        message: 'Would you like to install the beta version?',
+        choices: ['master', 'beta'],
+        default: 'master'
+      }];
 
-    this.prompt(prompts, function (props) {
-      this.props = props;
-
-      done();
-    }.bind(this));
+      this.prompt(prompts, function (props) {
+        this.props = props;
+        done();
+      }.bind(this));
+    }
   },
 
   writing: function () {

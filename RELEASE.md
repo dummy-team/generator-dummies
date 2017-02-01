@@ -2,6 +2,9 @@
 
 ## 2.0
 
+- **2.3.0** :
+  - beta (gulp) compatibility
+
 - **2.2.1** :
   - Fix dummy fetching
 

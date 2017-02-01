@@ -40,7 +40,13 @@ module.exports = yeoman.generators.Base.extend({
       self.fs.copy(remote.cachePath + '/index.html', 'index.html')
       self.fs.copy(remote.cachePath + '/.gitignore', '.gitignore')
       self.fs.copy(remote.cachePath + '/.editorconfig', '.editorconfig')
-      self.fs.copy(remote.cachePath + '/grunt', './grunt')
+      if (self.props.branch == 'beta') {
+        self.fs.copy(remote.cachePath + '/package.json', 'package.json')
+        self.fs.copy(remote.cachePath + '/gulpfile.js', 'gulpfile.js')
+      }
+      else {
+        self.fs.copy(remote.cachePath + '/grunt', './grunt')
+      }
       self.fs.copy(remote.cachePath + '/css', './css')
       self.fs.copy(remote.cachePath + '/js', './js')
       self.fs.copy(remote.cachePath + '/img', './img')
@@ -50,8 +56,15 @@ module.exports = yeoman.generators.Base.extend({
 
   install: function () {
     if (!this.options['skip-install']) {
-      this.spawnCommandSync('npm', ['install'], { cwd: 'grunt'})
-      this.spawnCommandSync('grunt', ['build'], { cwd: 'grunt'})
+      if (this.props.branch == 'beta') {
+        this.spawnCommandSync('yarn', ['install'])
+        this.spawnCommandSync('gulp')
+      }
+      else {
+        this.spawnCommandSync('npm', ['install'], {cwd:'grunt'})
+        this.spawnCommandSync('grunt', ['build'], {cwd:'grunt'})
+
+      }
     }
   }
 })

@@ -2,6 +2,9 @@
 
 ## 2.0
 
+- **2.3.1** :
+  - fix beta compatibility
+
 - **2.3.0** :
   - beta (gulp) compatibility
 

@@ -3,6 +3,11 @@
 ## 2.0
 
 - **2.3.1** :
+  - add beta templates folder
+  - fix beta compatibility
+
+
+- **2.3.1** :
   - fix beta compatibility
 
 - **2.3.0** :

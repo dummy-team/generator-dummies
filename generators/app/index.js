@@ -42,6 +42,7 @@ module.exports = yeoman.generators.Base.extend({
       if (self.props.branch == 'beta') {
         self.fs.copy(remote.cachePath + '/package.json', 'package.json')
         self.fs.copy(remote.cachePath + '/gulpfile.js', 'gulpfile.js')
+        self.fs.copy(remote.cachePath + '/templates', './templates')
       }
       else {
         self.fs.copy(remote.cachePath + '/index.html', 'index.html')

@@ -37,7 +37,6 @@ module.exports = yeoman.generators.Base.extend({
     var self = this
     var done = this.async()
     this.remote('dummy-team', 'dummy', this.props.branch, function (err, remote) {
-      self.fs.copy(remote.cachePath + '/index.html', 'index.html')
       self.fs.copy(remote.cachePath + '/.gitignore', '.gitignore')
       self.fs.copy(remote.cachePath + '/.editorconfig', '.editorconfig')
       if (self.props.branch == 'beta') {
@@ -45,6 +44,7 @@ module.exports = yeoman.generators.Base.extend({
         self.fs.copy(remote.cachePath + '/gulpfile.js', 'gulpfile.js')
       }
       else {
+        self.fs.copy(remote.cachePath + '/index.html', 'index.html')
         self.fs.copy(remote.cachePath + '/grunt', './grunt')
       }
       self.fs.copy(remote.cachePath + '/css', './css')

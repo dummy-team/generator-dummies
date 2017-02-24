@@ -13,15 +13,18 @@ module.exports = yeoman.generators.Base.extend({
     ))
 
     if (this.options['silent']) {
-      this.props = {branch: 'master'}
+      this.props = { branch: 'master' }
       done()
     }
     else {
       var prompts = [{
         type: 'list',
         name: 'branch',
-        message: 'Would you like to install the beta version?',
-        choices: ['master', 'beta'],
+        message: 'Which version do you need?',
+        choices: [
+          {name: 'master', value: 'master'},
+          {name: 'beta', value: 'beta', disabled: true},
+        ],
         default: 'master'
       }]
 
@@ -39,15 +42,9 @@ module.exports = yeoman.generators.Base.extend({
     this.remote('dummy-team', 'dummy', this.props.branch, function (err, remote) {
       self.fs.copy(remote.cachePath + '/.gitignore', '.gitignore')
       self.fs.copy(remote.cachePath + '/.editorconfig', '.editorconfig')
-      if (self.props.branch == 'beta') {
-        self.fs.copy(remote.cachePath + '/package.json', 'package.json')
-        self.fs.copy(remote.cachePath + '/gulpfile.js', 'gulpfile.js')
-        self.fs.copy(remote.cachePath + '/templates', './templates')
-      }
-      else {
-        self.fs.copy(remote.cachePath + '/index.html', 'index.html')
-        self.fs.copy(remote.cachePath + '/grunt', './grunt')
-      }
+      self.fs.copy(remote.cachePath + '/package.json', 'package.json')
+      self.fs.copy(remote.cachePath + '/gulpfile.js', 'gulpfile.js')
+      self.fs.copy(remote.cachePath + '/templates', './templates')
       self.fs.copy(remote.cachePath + '/css', './css')
       self.fs.copy(remote.cachePath + '/js', './js')
       self.fs.copy(remote.cachePath + '/img', './img')
@@ -57,15 +54,8 @@ module.exports = yeoman.generators.Base.extend({
 
   install: function () {
     if (!this.options['skip-install']) {
-      if (this.props.branch == 'beta') {
-        this.spawnCommandSync('yarn', ['install'])
-        this.spawnCommandSync('gulp')
-      }
-      else {
-        this.spawnCommandSync('npm', ['install'], {cwd:'grunt'})
-        this.spawnCommandSync('grunt', ['build'], {cwd:'grunt'})
-
-      }
+      this.spawnCommandSync('yarn', ['install'])
+      this.spawnCommandSync('gulp')
     }
   }
 })

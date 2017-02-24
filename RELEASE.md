@@ -1,11 +1,14 @@
 # Release notes
 
+## 3.0
+- **3.0.0** :
+  - Dummy 8 compatibility
+
 ## 2.0
 
 - **2.3.1** :
   - add beta templates folder
   - fix beta compatibility
-
 
 - **2.3.1** :
   - fix beta compatibility
